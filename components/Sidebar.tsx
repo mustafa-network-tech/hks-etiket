@@ -112,8 +112,11 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
             <span className="w-2 h-2 rounded-full bg-green-400" />
             <span className="text-xs text-slate-400">Sistemler Aktif</span>
           </div>
-          <p className="text-[10px] text-slate-600 ml-4">
+          <p className="text-[10px] text-slate-600 ml-4 mb-3">
             ERP · HKS · ESL Gateway
+          </p>
+          <p className="text-[10px] text-slate-500 font-semibold">
+            © MK Digital Systems
           </p>
         </div>
       </aside>

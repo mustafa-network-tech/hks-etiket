@@ -43,6 +43,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
             <span className="hidden md:inline text-xs text-slate-400">
               ERP + HKS + ESL Entegrasyon Gösterimi
             </span>
+            <span className="hidden sm:inline text-xs text-slate-400 border border-slate-200 px-2.5 py-1 rounded-full bg-white">
+              Demo Version · Haziran 2026
+            </span>
             <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full border border-green-200">
               <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
               <span className="hidden sm:inline">Canlı Demo</span>
@@ -56,10 +59,14 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
 
         {/* Footer */}
         <footer className="px-4 lg:px-6 py-3 border-t border-slate-200 bg-white">
-          <p className="text-[11px] text-slate-400 text-center">
-            © 2026 MK Digital Systems — Bu panel demo amaçlıdır. Gerçek API
-            bağlantısı içermez.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-1">
+            <p className="text-[11px] font-semibold text-slate-500">
+              © MK Digital Systems
+            </p>
+            <p className="text-[11px] text-slate-400">
+              Bu panel demo amaçlıdır · Gerçek API bağlantısı içermez
+            </p>
+          </div>
         </footer>
       </div>
     </div>
