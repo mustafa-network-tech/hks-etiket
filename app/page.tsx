@@ -15,10 +15,22 @@ import {
 } from "lucide-react";
 import { branches, dashboardStats, syncLogs } from "@/lib/mockData";
 
+function formatDateTime(date: Date) {
+  return date.toLocaleString("tr-TR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+}
+
 export default function DashboardPage() {
   const [syncing, setSyncing] = useState(false);
   const [syncDone, setSyncDone] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [lastSync, setLastSync] = useState(dashboardStats.lastSync);
 
   const handleSync = async () => {
     setSyncing(true);
@@ -31,6 +43,7 @@ export default function DashboardPage() {
       setProgress(step);
     }
 
+    setLastSync(formatDateTime(new Date()));
     setSyncing(false);
     setSyncDone(true);
     setTimeout(() => setSyncDone(false), 4000);
@@ -95,7 +108,7 @@ export default function DashboardPage() {
           <div className="text-right">
             <p className="text-xs text-slate-400">Son Senkronizasyon</p>
             <p className="text-xs font-semibold text-slate-600">
-              {dashboardStats.lastSync}
+              {lastSync}
             </p>
           </div>
           <button
